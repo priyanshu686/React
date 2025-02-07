@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>React Learning</title>
 </head>
 <body>
+
+    <script 
+        crossorigin 
+        src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+        crossorigin
+        src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
     <script>
-        const div = document.createElement('div');
-        div.style.backgroundColor = 'beige';
-        const heading = document.createElement('h1');
-        heading.innerHTML = "Hello World";
 
-        div.appendChild(heading);
+        const heading = React.createElement('h1', {}, "This is First Code in React");
+        
+        const div1 = React.createElement('div', { id: 'container' }, heading , "Hello Everyone");
 
-        document.body.appendChild(div);
+        const root1 = ReactDOM.createRoot(document.body);
+        root1.render(div1);
     </script>
 </body>
 
