@@ -1,0 +1,25 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "This is Learning of React",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priyanshu686/React.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Priyanshu Bindal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/priyanshu686/React/issues"
+  },
+  "homepage": "https://github.com/priyanshu686/React#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  }
+}
