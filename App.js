@@ -11,6 +11,7 @@ const jsxusing = <div id="container">
 
 console.log(jsxusing);
 
+
 // React Component
 
 const Heading =()=>{
@@ -23,7 +24,39 @@ const Heading =()=>{
 }
 
 
-const root1 = ReactDOM.createRoot(document.getElementById("root"));
-// root1.render(jsxusing);
+// Component Compostion
 
-root1.render(<Heading/>);
+const Header = ()=>{
+    return (
+    <div>
+        <h1>Welcome to my Website</h1>
+    </div>
+    )
+}
+
+const Footer = () => {
+    return(
+        <div>
+            <h5>This is the footer of my Website </h5>
+        </div>
+    )
+}
+
+const Body = () => {
+    return (
+        <div>
+        <Header/>
+        <div>
+            <p>This is the center Body of my Website</p>
+        </div>
+        <Footer/>
+        </div>
+    );
+}
+
+const root1 = ReactDOM.createRoot(document.getElementById("root"));
+// root1.render(jsxusing);   // Rendering for React Element
+
+// root1.render(<Heading/>);  // Rendering for React Functional Component
+
+root1.render(<Body/>);  // Rendering for Component Composition
