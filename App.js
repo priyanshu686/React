@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from 'react-dom/client'
 
 //  Using JSX
@@ -45,14 +45,21 @@ const Footer = () => {
 const Body = () => {
     return (
         <div>
+        <Header></Header>
         <Header/>
         <div>
             <p>This is the center Body of my Website</p>
         </div>
         <Footer/>
+        {Footer()}
         </div>
     );
 }
+
+// Three Ways to call Functional Components to another Functional Component
+// 1.) <name of Component></name of Component>
+// 2.) <name of Component/>
+// 3.) {name of Component()}
 
 const root1 = ReactDOM.createRoot(document.getElementById("root"));
 // root1.render(jsxusing);   // Rendering for React Element
