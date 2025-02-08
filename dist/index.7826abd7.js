@@ -2953,7 +2953,10 @@ var _clientDefault = parcelHelpers.interopDefault(_client);
 const heading = /*#__PURE__*/ (0, _reactDefault.default).createElement('h1', {}, "This is First Code in React");
 const div1 = /*#__PURE__*/ (0, _reactDefault.default).createElement('div', {
     id: 'container'
-}, heading, "Hello Everyone");
+}, [
+    heading,
+    "Hello Everyone"
+]);
 const root1 = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root1.render(div1);
 
