@@ -66,4 +66,4 @@ const root1 = ReactDOM.createRoot(document.getElementById("root"));
 
 // root1.render(<Heading/>);  // Rendering for React Functional Component
 
-root1.render(<Body/>);  // Rendering for Component Composition
+root1.render(<Body></Body>);  // Rendering for Component Composition
