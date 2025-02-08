@@ -2,8 +2,9 @@
   "name": "react",
   "version": "1.0.0",
   "description": "This is Learning of React",
-  "main": "index.js",
   "scripts": {
+    "start": "parcel index.html",
+    "prod-build":"parcel build index.html",
     "test": "jest"
   },
   "repository": {
