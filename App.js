@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom/client';
 import logo from './Image/Logo.png';
-import PranksterIMG from './Image/Prankster.avif';
 import {data} from './LiveData.js';
 
 const Header = () =>{
