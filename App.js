@@ -31,6 +31,7 @@ const ResCard = (props) =>{
                 <p className="star-rate"> {resobj.info.ratingNew.ratings.DELIVERY.ratingV2} Stars</p>
             </div>
             <div className="cuisine">
+                {/* <p>{resobj.info.cuisine.map(cuisineItem => cuisineItem.name).join(', ')}</p> */}
                 <p>{resobj.info.cuisine[0].name},{resobj.info.cuisine[1].name}</p>
                 <p>{resobj.info.costText.text}</p>
             </div>
