@@ -2,6 +2,7 @@
 import ResCard from "./ResCard.js";
 import { useState, useEffect } from "react";
 import { fetchlink } from "../utils/constants.js";
+import Shimmer from "./Shimmer.js";
 
 const Body = () => {
   const [list, setlist] = useState([]);
@@ -20,15 +21,17 @@ const Body = () => {
     }
   };
 
+  if(list.length === 0){
+    return <Shimmer/>;
+  }
+
   return (
     <div className="distanceBody">
       <button
         onClick={() => {
           const filterdata = list.filter((res) => res.info.avgRating > 4.5);
           setlist(filterdata);
-        }}
-      >
-        {" "}
+        }}>
         Top Rated Restaurants
       </button>
 
