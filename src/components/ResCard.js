@@ -1,33 +1,34 @@
-
+import { imglink } from "../utils/constants";
 
 
 const ResCard = (props) =>{
     const {resobj} = props;
-    const {image,name,cuisine,costText,locality} = resobj?.info;
-    const{ratingV2} = resobj?.info?.ratingNew?.ratings?.DELIVERY;
-    const {distance} = resobj;
-    let rating;
-    if(ratingV2 === '-'){
-        rating = "NEW";
-    }
-    else{
-        rating = ratingV2 + "Stars";
-    }
+    const {cloudinaryImageId,name,cuisines,costForTwo,locality,avgRating} = resobj?.info || {};
+    const {lastMileTravel} = resobj?.info?.sla || {};
+    console.log(resobj);
+    // let rating;
+    // if(ratingV2 === '-'){
+    //     rating = "NEW";
+    // }
+    // else{
+    //     rating = ratingV2 + "Stars";
+    // }
     return (
         <div className="res-card">
-            <img className="res-img" alt="Restaurant-Image"  src={image.url}/>
+            <img className="res-img" alt="Restaurant-Image" src={`${imglink}${cloudinaryImageId}`} />
+
             <div className="res-name">
                 <h3>{name}</h3>
-                <p className="star-rate"> {rating}</p>
+                <p className="star-rate">{avgRating} Stars</p>
             </div>
             <div className="cuisine">
                 {/* <p>{resobj.info.cuisine.map(cuisineItem => cuisineItem.name).join(', ')}</p> */}
-                <p>{cuisine[0].name},{cuisine[1].name}</p>
-                <p>{costText.text}</p>
+                <p>{cuisines[0]+","+cuisines[1]}</p>
+                <p>{costForTwo}</p>
             </div>
             <div className="address">
-                <p>{locality.name}</p>
-                <p>{distance}</p>
+                <p>{locality}</p>
+                <p>{lastMileTravel} km</p>
             </div>
         </div>
     )
