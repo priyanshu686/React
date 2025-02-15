@@ -6,6 +6,8 @@ import Shimmer from "./Shimmer.js";
 
 const Body = () => {
   const [list, setlist] = useState([]);
+  const[filterlist,setfilterlist] = useState([]);
+  const[searchText,setsearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -16,6 +18,7 @@ const Body = () => {
       const response = await fetch(fetchlink);
       const data = await response.json();
       setlist(data?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setfilterlist(data?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -27,19 +30,30 @@ const Body = () => {
 
   return (
     <div className="distanceBody">
-      <button
+      <div className="search-top_res">
+        <input type="text" 
+        className="search-box"
+        value={searchText} 
+        onChange={(e)=>{
+          setsearchText(e.target.value);
+        }}
+        />
+        <button onClick={()=>{
+          const filterdata = list.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+          setfilterlist(filterdata);
+        }}>
+          Search
+        </button>
+      <button className="top-res"
         onClick={() => {
           const filterdata = list.filter((res) => res.info.avgRating > 4.5);
-          setlist(filterdata);
+          setfilterlist(filterdata);
         }}>
         Top Rated Restaurants
       </button>
-
-      {/* <button onClick={()=>{
-            const filterdata = list.filter((res) => res.info.ratingNew.ratings.DELIVERY.ratingV2 === '-');
-            setlist(filterdata)}}> New Restaurant</button> */}
+      </div>
       <div className="res-container">
-        {list.map((restaurent) => (
+        {filterlist.map((restaurent) => (
           <ResCard key={restaurent.info.id} resobj={restaurent} />
         ))}
       </div>
