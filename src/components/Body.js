@@ -8,9 +8,10 @@ const Body = () => {
   const [list, setlist] = useState([]);
   const[filterlist,setfilterlist] = useState([]);
   const[searchText,setsearchText] = useState("");
-
+  // console.log("After the UseState");
   useEffect(() => {
     fetchData();
+    // console.log("useEffect is Rendered");
   }, []);
 
   const fetchData = async () => {
@@ -28,8 +29,9 @@ const Body = () => {
     return <Shimmer/>;
   }
 
-  return (
+  return ( 
     <div className="distanceBody">
+      {/* {console.log("Body Render")}; */}
       <div className="search-top_res">
         <input type="text" 
         className="search-box"

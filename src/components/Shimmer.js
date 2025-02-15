@@ -7,6 +7,7 @@ const Shimmer = () =>{
             <div className="shimmer-card"></div>
             <div className="shimmer-card"></div>
             <div className="shimmer-card"></div>
+            {/* {console.log("Simmer Rendered")}; */}
         </div>
     );
 }

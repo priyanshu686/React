@@ -1,11 +1,27 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import logo from '../../Image/Logo.png';
+import { Link } from 'react-router-dom';
 
 const Header = () =>{
     const [btnName,setbtnName] = useState("Login");
+    // console.log("After useState");
+
+    // useEffect(()=>{
+    //     console.log("useEffect Rendered")
+    // },[btnName]);
+
+    // useEffect(()=>{
+    //     console.log("useEffect Rendered")
+    // },[]);
+
+
+    // useEffect(()=>{
+    //     console.log("useEffect Rendered")
+    // });
 
     return (
         <div className="header">
+            {/* {console.log("Entered in return Statement of Header")} */}
             <div >
                 <img className="logo" src={logo} alt="Logo"/>
             </div>
