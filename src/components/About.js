@@ -2,7 +2,29 @@ import log from '../../Image/Image_About.png';
 
 const About = () => {
   return (
-    <div className="about-conatiner">
+    
+
+    <div>
+
+<div className="sc-fkXlHk dsTNnG">
+  <div className="sc-1mo3ldo-0 sc-jYWAPh eChINe">
+    <div className="image-container">
+      <img 
+        alt="about us cover image" 
+        src="https://b.zmtcdn.com/web/about/48fc8d7806d6a947fd041a8a1cf83bac1563875757.png" 
+        loading="lazy" 
+        className="sc-s1isp7-5 fyZwWD" 
+      />
+      <div className="text-overlay">
+        <h1>Better food for more people</h1>
+        <p>scroll for more</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
       <h1 className='about-name'>Who we Are?</h1>
       <div className='content-img'>
       <p>
