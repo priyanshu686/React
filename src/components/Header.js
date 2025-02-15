@@ -29,7 +29,7 @@ const Header = () =>{
                 <ul className="list">
                     <li id="n1"><Link to ="/">Home</Link></li>
                     <li id="n2"><Link to ="/about">About Us</Link></li>
-                    <li id="n3">Contect Us</li>
+                    <li id="n3"><Link to="/contact">Contact Us</Link></li>
                     <li id="n4">Cart</li>
                     <button id="login"
                 onClick={()=>{
