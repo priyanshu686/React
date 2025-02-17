@@ -9,12 +9,13 @@ const Restaurants_Details = () => {
   const [vegmenu, setvegmenu] = useState(null);
   const [veg, setveg] = useState("Both");
   const resId = useParams();
-  console.log();
+  // console.log();
   
-  useEffect(async () => {
-    const url1 =
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=30.7333148&lng=76.7794179&restaurantId=" + resId.resid;
+  useEffect(() => {
+    fetchData();
+  }, [resId]);
 
+  const fetchData = async()=>{
     try {
       const response = await fetch(url + resId.resid);
       const json = await response.json();
@@ -32,7 +33,7 @@ const Restaurants_Details = () => {
     } catch (error) {
       console.error("Error fetching menu data:", error);
     }
-  }, [resId]);
+  }
 
   if (resdata === null) {
     return <Shimmer />;
