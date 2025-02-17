@@ -2,38 +2,13 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router";
 import { url } from "../utils/constants";
+import useRestaurantDataFetch from "../utils/useRestaurantdatafetch";
 
 const Restaurants_Details = () => {
-  const [resdata, setresdata] = useState(null);
-  const [resmenu, setresmenu] = useState(null);
-  const [vegmenu, setvegmenu] = useState(null);
-  const [veg, setveg] = useState("Both");
   const resId = useParams();
   // console.log();
-  
-  useEffect(() => {
-    fetchData();
-  }, [resId]);
-
-  const fetchData = async()=>{
-    try {
-      const response = await fetch(url + resId.resid);
-      const json = await response.json();
-      setresdata(json?.data?.cards[2]?.card?.card?.info);
-      setresmenu(
-        json?.data?.cards[4]?.groupedCard?.cardGroupMap.REGULAR?.cards[1].card
-          .card
-      );
-      setvegmenu(
-        json?.data?.cards[4]?.groupedCard?.cardGroupMap.REGULAR?.cards[1].card
-          .card
-      );
-      console.log(json?.data?.cards[4]?.groupedCard?.cardGroupMap.REGULAR?.cards[1].card
-        .card);
-    } catch (error) {
-      console.error("Error fetching menu data:", error);
-    }
-  }
+  const resmenu = useRestaurantDataFetch(resId).resmenu;
+  const resdata = useRestaurantDataFetch(resId).resdata
 
   if (resdata === null) {
     return <Shimmer />;
