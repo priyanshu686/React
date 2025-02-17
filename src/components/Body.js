@@ -3,6 +3,7 @@ import ResCard from "./ResCard.js";
 import { useState, useEffect } from "react";
 import { fetchlink } from "../utils/constants.js";
 import Shimmer from "./Shimmer.js";
+import {Link} from 'react-router-dom';
 
 const Body = () => {
   const [list, setlist] = useState([]);
@@ -56,7 +57,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filterlist.map((restaurent) => (
-          <ResCard key={restaurent.info.id} resobj={restaurent} />
+         <Link to ={"/restaurants/"+restaurent.info.id}> <ResCard key={restaurent.info.id} resobj={restaurent} />  </Link> 
         ))}
       </div>
     </div>

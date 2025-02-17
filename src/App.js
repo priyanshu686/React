@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom/client';
+import { createBrowserRouter,RouterProvider} from "react-router-dom";
+
 import AppLayout from "./components/AppLayout";
 import Body from "./components/Body";
 import About from "./components/About";
 import Error from "./components/Error";
 import ContactUs from "./components/ContactUs";
-import { createBrowserRouter,RouterProvider} from "react-router-dom";
+import Restaurants_Details from "./components/Restaurants_Details";
+
 const routers = createBrowserRouter([
     {
         path:"/",
@@ -22,6 +25,10 @@ const routers = createBrowserRouter([
             {
                 path:"/contact",
                 element:<ContactUs/>
+            },
+            {
+                path:"/restaurants/:resid",
+                element:<Restaurants_Details/>
             }
         ],
         errorElement:<Error/>,
