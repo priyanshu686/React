@@ -15,13 +15,11 @@ const useRestaurantDataFetch = (resId) => {
       const json = await response.json();
       setresdata(json?.data?.cards[2]?.card?.card?.info);
       setresmenu(
-        json?.data?.cards[4]?.groupedCard?.cardGroupMap.REGULAR?.cards[1].card
-          .card
+        json?.data?.cards[4]?.groupedCard?.cardGroupMap.REGULAR?.cards
       );
-    // console.log(
-    //     json?.data?.cards[4]?.groupedCard?.cardGroupMap.REGULAR?.cards[1].card
-    //       .card
-    //   );
+    console.log(
+      json?.data?.cards[4]?.groupedCard?.cardGroupMap.REGULAR?.cards
+    );
     } catch (error) {
       console.error("Error fetching menu data:", error);
     }
