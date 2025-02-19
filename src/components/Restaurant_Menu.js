@@ -1,22 +1,21 @@
 import { useState } from 'react';
 import Restaurant_itemCard from './Restaurant_ItemCard';
 
-const Restaurant_Menu = ({ data }) => {
-  const [openIndex, setOpenIndex] = useState(false);
+const Restaurant_Menu = ({ data , showitem , setshowindex}) => {
 //   console.log(type[0]?.card?.card?.title);
   const handleClick = () => {
-    setOpenIndex(!openIndex);
+    setshowindex();
   };
 
   return (
     <div>
       
         <div  className="res-title">
-          <div className="dish-title" onClick={() => handleClick()}>
+          <div className="dish-title" onClick={handleClick}>
             {data.title}
           </div>
           <div>
-            {openIndex && 
+            {showitem && 
               <Restaurant_itemCard card={data.itemCards} />
             }
           </div>
