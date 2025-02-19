@@ -1,9 +1,10 @@
 // import { data } from "../utils/LiveData.js";
 import ResCard,{addDiscount} from "./ResCard.js";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import { fetchlink } from "../utils/constants.js";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
+import UserContext from '../utils/UserContext.js'
 
 const Body = () => {
   const [list, setlist] = useState([]);
@@ -14,7 +15,8 @@ const Body = () => {
     fetchData();
     // console.log("useEffect is Rendered");
   }, []);
-  
+  const {setusername , LoggedInUser} = useContext(UserContext);
+
   const fetchData = async () => {
     try {
       const response = await fetch(fetchlink);
@@ -75,6 +77,9 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+      </div>
+      <div>
+        <input type="text" value={LoggedInUser}  onChange={(e)=>setusername(e.target.value)}/>
       </div>
       <div className="res-container">
         {filterlist.map((restaurent) => (

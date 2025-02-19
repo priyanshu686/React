@@ -1,32 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState , useContext} from "react";
 import logo from "../../Image/Logo.png";
 import { Link } from "react-router-dom";
-
+import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 const Header = () => {
   const [btnName, setbtnName] = useState("Login");
-  // console.log("After useState");
+  const online = useOnlineStatus();
 
-  // useEffect(()=>{
-  //     console.log("useEffect Rendered")
-  // },[btnName]);
-
-  // useEffect(()=>{
-  //     console.log("useEffect Rendered")
-  // },[]);
-
-  // useEffect(()=>{
-  //     console.log("useEffect Rendered")
-  // });
-  
+  const {LoggedInUser} = useContext(UserContext);
   return (
     <div className="header">
-      {/* {console.log("Entered in return Statement of Header")} */}
       <div>
         <img className="logo" src={logo} alt="Logo" />
       </div>
       <div className="nav-items">
         <ul className="list">
-          {/* <li>Online Status: {online ? <p>Online</p> : <p>offline</p>}</li> */}
+          <li>Online Status: {online ? <p>Online</p> : <p>offline</p>}</li>
 
           <li id="n1">
             <Link to="/">Home</Link>
@@ -46,6 +35,7 @@ const Header = () => {
           >
             {btnName}
           </button>
+          <li id="n4">UserName : "{LoggedInUser}"</li>
         </ul>
       </div>
     </div>
