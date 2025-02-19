@@ -170,3 +170,36 @@ h3{
     background: #f0f0f0;
 
 }
+
+.name{
+    margin-right: 350px;
+}
+.rate-cost{
+    border: #f0f0f0 solid;
+    box-shadow: 15px 10px 15px #f0f0f0;
+    padding: 5px;
+    text-align: left;
+}
+.res-details{
+    text-align: center;
+    width: 700px;
+    border: #f0f0f0 solid;
+    margin-left: 200px;
+}
+.res-dish{
+    border-bottom: 2px solid gray;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.dish-title{
+    border: 3px solid #f0f0f0;
+}
+.food-img{
+    width: 100px;
+    height: 100px;
+}
+.res-title{
+    cursor: pointer;
+}
